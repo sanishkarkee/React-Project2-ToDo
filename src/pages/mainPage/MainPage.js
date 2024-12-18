@@ -15,13 +15,16 @@ const MainPage = () => {
 
   return (
     <>
-    
-
       {/* This is main page. */}
       {/* <Link to='/add'>Goto add Page</Link> */}
       {/* <button onClick={login}>Login</button> */}
       <NavBar />
-      This is the main page.
+
+      <div className='todo_container'>
+        <h3>Your to-do</h3>
+
+        <div className='single_todo'>todo 1</div>
+      </div>
     </>
   );
 };
