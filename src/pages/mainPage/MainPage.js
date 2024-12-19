@@ -13,6 +13,10 @@ const MainPage = () => {
   //   // history.replace('/add'); //yesle chai browser ma user lai back button press garda previous content dekhaudaina
   // };
 
+  const getTodo = localStorage.getItem('todo')
+    ? JSON.parse(localStorage.getItem('todo'))
+    : [];
+
   return (
     <>
       {/* This is main page. */}
@@ -23,7 +27,13 @@ const MainPage = () => {
       <div className='todo_container'>
         <h3>Your to-do</h3>
 
-        <div className='single_todo'>todo 1</div>
+        {getTodo.map((el) => {
+          return (
+            <>
+              <div className='single_todo'>{el}</div>
+            </>
+          );
+        })}
       </div>
     </>
   );
