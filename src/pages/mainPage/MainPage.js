@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../NavBar';
+import { FaRegEye } from 'react-icons/fa';
 
 const MainPage = () => {
   // const history = useHistory();
@@ -30,7 +31,10 @@ const MainPage = () => {
         {getTodo.map((el) => {
           return (
             <>
-              <div className='single_todo'>{el}</div>
+              <div className='single_todo'>
+                {el}
+                <FaRegEye size={'20px'} />
+              </div>
             </>
           );
         })}
