@@ -5,10 +5,9 @@ import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom';
 const ViewPage = () => {
   const history = useHistory();
 
+  //---- Using PARAMS useLocation() ----
   const getParams = useParams();
-
   // console.log(getParams.id); //getParams matra huda OP=> {id:'0'} -/- getParams.id huda OP => 0
-
   const getID = getParams.id;
 
   //   Index through bata chai localstorage bata data nikalne
@@ -19,6 +18,14 @@ const ViewPage = () => {
   //   console.log(getStorage[getID]); // OP => ram
 
   const getData = getStorage[getID];
+
+  //---- Using QUERY using useLocation() ----
+  // const getLocation = useLocation(); //OP=> {pathname: '/view', search: '?id=0', hash: '', state: undefined, key: '0njz5n'}
+  // const getURLParams = new URLSearchParams(getLocation.search);
+  // const getId = getURLParams.get('id');
+  // console.log(getId);
+  // // console.log(getLocation.search); //OP=>  ?id=0
+  // const getData = getStorage[getId];
 
   return (
     <>

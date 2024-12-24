@@ -11,7 +11,11 @@ const Routes = () => {
       <Route path='/' component={MainPage} exact />
       <Route path='/add' component={AddToDo} exact />
 
+      {/* Dynamic routing */}
       <Route path='/view/:id' component={ViewPage} exact />
+
+      {/* Query using useLocation() */}
+      {/* <Route path='/view' component={ViewPage} exact /> */}
     </>
   );
 };
