@@ -19,13 +19,12 @@ const ViewPage = () => {
 
   const getData = getStorage[getID];
 
-  //---- Using QUERY using useLocation() ----
-  // const getLocation = useLocation(); //OP=> {pathname: '/view', search: '?id=0', hash: '', state: undefined, key: '0njz5n'}
-  // const getURLParams = new URLSearchParams(getLocation.search);
-  // const getId = getURLParams.get('id');
-  // console.log(getId);
-  // // console.log(getLocation.search); //OP=>  ?id=0
-  // const getData = getStorage[getId];
+  const deleteTodo = () => {
+    getStorage.splice(getID, 1);
+    //Updated ARRAY feri push gareko
+    localStorage.setItem('todo', JSON.stringify(getStorage));
+    history.replace('/');
+  };
 
   return (
     <>
@@ -52,6 +51,10 @@ const ViewPage = () => {
       >
         {getData}
       </div>
+
+      <button style={{ background: '#e73f33' }} onClick={deleteTodo}>
+        Delete To-do
+      </button>
     </>
   );
 };
