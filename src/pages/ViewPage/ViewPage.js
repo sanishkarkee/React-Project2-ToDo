@@ -7,7 +7,9 @@ const ViewPage = () => {
 
   const getParams = useParams();
 
-  const getID = getParams.id; //getParams matra huda OP=> {id:'0'} -/- getParams.id huda OP => 0
+  // console.log(getParams.id); //getParams matra huda OP=> {id:'0'} -/- getParams.id huda OP => 0
+
+  const getID = getParams.id;
 
   //   Index through bata chai localstorage bata data nikalne
   const getStorage = localStorage.getItem('todo')
