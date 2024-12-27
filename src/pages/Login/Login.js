@@ -1,8 +1,9 @@
 import React from 'react';
 import NavBar from '../NavBar';
-import { Link, Route } from 'react-router-dom/cjs/react-router-dom';
+import { Link, Route, useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 const Login = () => {
+  const history = useHistory();
   return (
     <>
       <NavBar />
@@ -10,20 +11,47 @@ const Login = () => {
       <div className='todo_container'>
         <h3>Login Page</h3>
 
-        <button
-          onClick={() => {
-            localStorage.setItem('loggedIn', true);
-          }}
-        >
-          Login!
-        </button>
+        {localStorage.getItem('loggedIn') ? (
+          <>
+            <h4>You're already logged in. </h4>
+            <b
+              style={{
+                backgroundColor: 'maroon',
+                color: 'white',
+                padding: '10px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+              }}
+              onClick={() => {
+                localStorage.removeItem('loggedIn');
+                history.push('/');
+              }}
+            >
+              Logout
+            </b>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => {
+                alert("You're successfully logged in!");
+                history.replace('/');
+                localStorage.setItem('loggedIn', true);
+              }}
+            >
+              Login!
+            </button>
 
-        <Link to='/login/showInfo'>Show Login Information!</Link>
+            <br />
+            <br />
 
-        <Route path='/login/showInfo'>
-          {/* We can also render component here */}
-          <div>This is dummy login and doesnt communicate with server.</div>
-        </Route>
+            <Link to='/login/showInfo'>Nested Route | Show Info</Link>
+            <Route path='/login/showInfo'>
+              {/* We can also render component here */}
+              <div>This is dummy login and doesnt communicate with server.</div>
+            </Route>
+          </>
+        )}
       </div>
     </>
   );

@@ -24,13 +24,16 @@ const Routes = () => {
           <Route path='/home' component={MainPage} exact />
 
           <Route path='/add' exact>
-            {localStorage.getItem('loggedIn') ? (
+            {/* NOTE: Yesto protected page kura haru chai <Route> ma na lekhera chai specific <component/> ma lekhnu parxa */}
+            {/* {localStorage.getItem('loggedIn') ? (
               <>
                 <AddToDo />
               </>
             ) : (
               <Redirect to='/login' />
-            )}
+            )} */}
+
+            <AddToDo />
           </Route>
 
           <Route path='/login' component={Login} />
