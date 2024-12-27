@@ -6,7 +6,7 @@ import AddToDo from '../pages/add-todo/AddToDo';
 import ViewPage from '../pages/ViewPage/ViewPage';
 
 const Routes = () => {
-  // Bujne kura route ma pages hari declare gare paxi, xomponents haru ma Routes.js import garirakhnu pardaina// direct to="/add" lekhe pugxa
+  // Bujne kura route ma pages hari declare gare paxi, components haru ma Routes.js import garirakhnu pardaina// direct to="/add" lekhe pugxa
   return (
     <>
       <Route path='/' exact>
@@ -25,7 +25,7 @@ const Routes = () => {
         )}
       </Route>
 
-      <Route path='/login' component={Login} exact />
+      <Route path='/login' component={Login} />
 
       {/* Dynamic routing */}
       <Route path='/view/:id' component={ViewPage} exact />
