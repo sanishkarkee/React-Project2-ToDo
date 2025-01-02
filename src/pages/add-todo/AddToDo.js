@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import NavBar from '../NavBar';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import Authcheck from '../../middleware/Authcheck';
 // NOTES: input field ko data haru hamile "state" use garera store/grab garthyeu,
 // tara yesma chai hamile tyo kaam "useRef" use garera garxau
 
@@ -8,6 +9,9 @@ const AddToDo = () => {
   const todoText = useRef();
 
   const history = useHistory();
+
+  // AUTH Check OR Using PROTECTED PAGE react router concept
+  Authcheck();
 
   const addTodo = (e) => {
     e.preventDefault();

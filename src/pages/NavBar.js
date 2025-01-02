@@ -11,6 +11,10 @@ const NavBar = () => {
             <div>Home</div>
           </Link>
 
+          <Link to='/login'>
+            <div>Login</div>
+          </Link>
+
           <Link to='add'>
             <div>Add Todo</div>
           </Link>
