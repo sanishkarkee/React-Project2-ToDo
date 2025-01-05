@@ -15,19 +15,29 @@ const MainPage = () => {
       <div className='todo_container'>
         <h3>Your to-do</h3>
 
-        {getTodo.map((el, index) => {
-          return (
-            <>
-              <div className='single_todo'>
-                {el}
+        {getTodo && getTodo.length > 0 ? (
+          <>
+            {getTodo.map((el, index) => {
+              return (
+                <>
+                  <div className='single_todo'>
+                    {el}
 
-                <Link to={`/view/${index}`}>
-                  <FaRegEye size={'20px'} />
-                </Link>
-              </div>
-            </>
-          );
-        })}
+                    <Link to={`/view/${index}`}>
+                      <FaRegEye size={'20px'} />
+                    </Link>
+                  </div>
+                </>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            <center>
+              Nothing on your To-do <Link to='/add'>Add some</Link>
+            </center>
+          </>
+        )}
       </div>
     </>
   );
